@@ -1,0 +1,47 @@
+import data > import from flat file > does not include include column headers > export to sql server provider (scroll to bottom)
+--select * into newunion from LAF_20210309 UNION ALL SELECT * FROM LIB_20210309
+select * from newunion
+select * from newunion where [Column 23] = 'dem'
+select * from LAF_H where [Column 2] >= Convert(datetime, '2020-01-01') order by [Column 1]
+
+--create table _ as is mysql syntax. correct is select _ into for microsoft sql server. https://www.w3schools.com/sql/sql_select_into.asp.
+--https://stackoverflow.com/questions/25554418/text-was-truncated-or-one-or-more-characters-had-no-match-in-the-target-code-pag
+
+select * from LAF_H
+where [Column 2] >= Convert(datetime, '2020-01-01')
+order by [Column 1],Convert(datetime,[Column 2])
+
+select * from LAF_H
+where [Column 2] >= Convert(datetime, '2020-01-01') and [Column 3] = 'gen' and [Column 4] = 'a'
+order by [Column 1],Convert(datetime,[Column 2])
+
+select [column 1],[column 23] from laf
+select [column 1],[column 23] into LAF_P from laf
+
+SELECT laf.[column 1], laf.[column 23]-- into LAF_P_2020GEN
+FROM laf
+JOIN laf_H ON laf.[column 1] = laf_H.[column 1]
+where laf_H.[Column 2] >= Convert(datetime, '2020-11-01')
+and laf_H.[column 4] != 'n'
+
+select * from dad where [column 11] like '33034%'
+--like and % for wildcard. all entries where column 11 starts with 33034. can also put '%33034%' for any entries containing 33034 anywhere in column 11
+
+select * from dad where [column 11]
+	like '33138%'
+	or [column 11] like '33137%'
+	or [column 11] like '33132%'
+--for multiple likes
+
+select [column 7], count([column 7]) as people from sus group by [column 7] order by people
+--show number of rows with same column 7 value. first [column 7] shows the distinct column 7 value in the first column of the results. 'as people' names the second column 'people' where the count will show up. can also add 'distinct' to count to not count repeats: count(distinct [column 7]) Note: this command selects two columns to show in results. column 7 and the count of column 7, where the count is labeled as 'people'. these results are grouped (added) together based on column 7 entries. https://stackoverflow.com/questions/49055600/sql-query-to-count-number-of-rows-with-same-value
+
+select count(*) from miami
+--count all rows from database
+select count(*) from miami where [column 23] = 'dem'
+--count all rows from database where [column 23] = 'dem'. Much faster than 'select' which actually has to show you the rows
+
+C:\Users\Cynder>cd C:\Users\Cynder\Downloads\20210309_VoterDetail
+C:\Users\Cynder\Downloads\20210309_VoterDetail>ren *.txt ???.txt
+the ? is a wildcard that leaves the original character. so three ??? is to leave first three original characters in filename.
+ren ???.txt ???_H.txt adds _H
