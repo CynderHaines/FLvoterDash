@@ -50,6 +50,9 @@ Error: 0xC02020A1 at Data Flow Task, Flat File Source [89]: Data conversion fail
 Go into flat file connection manager in Visual Studio > advanced > column 37 > change data type to "text stream"; and change code page to 28591 (ISO 8859-1 Latin I)
 also possible code page change to UTF-8 according to https://stackoverflow.com/questions/25554418/text-was-truncated-or-one-or-more-characters-had-no-match-in-the-target-code-pag
 
+Error: 0xC020844B at Data Flow Task, ADO NET Destination [2]: An exception has occurred during data insertion, the message returned from the provider is: Received an invalid column length from the bcp client for colid 38.
+imported flat data file with text stream data type for column 38 which produced varchar(MAX) data type for column 38. imported into that table in order to fix error. would also be resolved by changing existing table column 38 data type to varchar(MAX) but may require SQL Server setting to allow saving changes that will recreate the table
+
 delete from three where [column 0] = 'bro'
 --if no where condition then deletes all rows but keeps table format with columns
 
