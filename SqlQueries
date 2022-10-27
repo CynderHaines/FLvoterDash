@@ -47,7 +47,7 @@ the ? is a wildcard that leaves the original character. so three ??? is to leave
 ren ???.txt ???_H.txt adds _H
 
 Error: 0xC02020A1 at Data Flow Task, Flat File Source [89]: Data conversion failed. The data conversion for column "Column 37" returned status value 4 and status text: "Text was truncated or one or more characters had no match in the target code page."
-Go into flat file connection manager in Visual Studio > advanced > column 37 > change data type to "text stream"; and change code page to ISO Latin 1
+Go into flat file connection manager in Visual Studio > advanced > column 37 > change data type to "text stream"; and change code page to 28591 (ISO 8859-1 Latin I)
 also possible code page change to UTF-8 according to https://stackoverflow.com/questions/25554418/text-was-truncated-or-one-or-more-characters-had-no-match-in-the-target-code-pag
 
 delete from three where [column 0] = 'bro'
