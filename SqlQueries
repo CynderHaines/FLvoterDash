@@ -5,7 +5,7 @@ select * from newunion where [Column 23] = 'dem'
 select * from LAF_H where [Column 2] >= Convert(datetime, '2020-01-01') order by [Column 1]
 
 multiple flat file import to SQL Server using Visual Studio 2019
-install VS19 > extensions > SQL Server Integration Services > create new SSIS solution > create data flow task, double click > within data flow create flat file source and create flat file connection manager > create ADO NET Destination and create ADO NET Destination connection manager
+install VS19 > extensions > SQL Server Integration Services > create new SSIS solution > create data flow task, double click > within data flow create flat file source and create New connection...MULTIFLATFILE connection manager > create ADO NET Destination and create ADO NET Destination connection manager
 In flat file connection manager select all files within folder or select one file and replace \DAD.txt > \*.txt where * wildcard selects all files in folder ending in txt in alphabetical order
 
 --create table _ as is mysql syntax. correct is select _ into for microsoft sql server. https://www.w3schools.com/sql/sql_select_into.asp.
