@@ -27,6 +27,12 @@ JOIN laf_H ON laf.[column 1] = laf_H.[column 1]
 where laf_H.[Column 2] >= Convert(datetime, '2020-11-01')
 and laf_H.[column 4] != 'n'
 
+SELECT allstatevoterdetail.[column 1], allstatevoterdetail.[column 23] into ala from allstatevoterdetail
+JOIN allstatehistory ON allstatevoterdetail.[column 1] = allstatehistory.[column 1]
+where allstatehistory.[Column 2] = Convert(datetime, '2020-11-03')
+and allstatevoterdetail.[column 0]='ala'
+and allstatehistory.[column 4] != 'n'
+
 select * from dad where [column 11] like '33034%'
 --like and % for wildcard. all entries where column 11 starts with 33034. can also put '%33034%' for any entries containing 33034 anywhere in column 11
 
