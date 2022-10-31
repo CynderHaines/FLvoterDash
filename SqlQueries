@@ -27,6 +27,15 @@ JOIN laf_H ON laf.[column 1] = laf_H.[column 1]
 where laf_H.[Column 2] >= Convert(datetime, '2020-11-01')
 and laf_H.[column 4] != 'n'
 
+select count(*) from allstatevoterdetail where [column 0]='ala'
+select count(*) from allstatevoterdetail where [column 0]='ala' and [column 23]='dem'
+select count(*) from allstatevoterdetail where [column 0]='ala' and [column 23]='rep'
+select count(*) from allstatevoterdetail where [column 0]='ala' and [column 23]='npa'
+select count(*) from ala
+select count(*) from ala where [column 23]='dem'
+select count(*) from ala where [column 23]='rep'
+select count(*) from ala where [column 23]='npa'
+
 SELECT allstatevoterdetail.[column 1], allstatevoterdetail.[column 23] into ala from allstatevoterdetail
 JOIN allstatehistory ON allstatevoterdetail.[column 1] = allstatehistory.[column 1]
 where allstatehistory.[Column 2] = Convert(datetime, '2020-11-03')
